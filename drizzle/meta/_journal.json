@@ -1,0 +1,55 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1787570691526,
+      "tag": "0000_right_mojo",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1787571079092,
+      "tag": "0001_tired_microchip",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1787571644519,
+      "tag": "0002_smart_old_lace",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1787571869806,
+      "tag": "0003_blue_justin_hammer",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1787572538839,
+      "tag": "0004_rainy_sandman",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1787572614980,
+      "tag": "0005_reflective_echo",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1787573086734,
+      "tag": "0006_freezing_red_hulk",
+      "breakpoints": true
+    }
+  ]
+}
