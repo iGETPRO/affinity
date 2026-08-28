@@ -1,0 +1,6 @@
+d2e9994f9b80ac4d30b029de8c2397a404576b899fc91cff78d9a986b5e1f58d  /home/ubuntu/VectorForge-1.0.0-x64-setup.exe
+989dca71a10d8f8198107cdaead369fb9c560ca5784f592e13e245f7271ae288  /home/ubuntu/VectorForge-1.0.0-x64-portable.exe
+6c7afd7c87368b772e64ad4eb500f9ff3e3a29babe1869a37b7e334ec9bb7c3c  /home/ubuntu/PhotoForge-1.0.0-x64-setup.exe
+4c94a50e38ed1f8bc41e2da8319bf91a3de8d5b0a9fab7257a625b564f546318  /home/ubuntu/PhotoForge-1.0.0-x64-portable.exe
+b53c1de7395a1952eb91e3fa2c86512951e2c1de96915d4582ac681aebb8a4bc  /home/ubuntu/PublisherForge-1.0.0-x64-setup.exe
+458b4dc83305e1ec58c7be94542b2d0f09cf85545de3d732a86330310c4401b3  /home/ubuntu/PublisherForge-1.0.0-x64-portable.exe
