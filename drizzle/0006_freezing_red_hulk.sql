@@ -1,0 +1,1 @@
+ALTER TABLE `collaborator_invites` ADD `expiresAt` timestamp;

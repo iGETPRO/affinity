@@ -1,0 +1,1 @@
+ALTER TABLE `document_versions` ADD `stateJson` text NOT NULL;
