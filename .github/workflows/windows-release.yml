@@ -1,0 +1,85 @@
+name: Windows release
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+
+jobs:
+  build-windows:
+    name: Build Windows x64 artifacts
+    runs-on: windows-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.4.1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run unit tests
+        run: pnpm test
+
+      - name: Run TypeScript validation
+        run: pnpm check
+
+      - name: Build web and server bundle
+        run: pnpm build
+
+      - name: Build VectorForge setup and portable artifacts
+        run: pnpm exec electron-builder --win --config desktop/vectorforge-builder.yml --publish never
+
+      - name: Build PhotoForge Studio setup and portable artifacts
+        run: pnpm exec electron-builder --win --config desktop/photoforge-builder.yml --publish never
+
+      - name: Build PublisherForge setup and portable artifacts
+        run: pnpm exec electron-builder --win --config desktop/publisherforge-builder.yml --publish never
+
+      - name: Generate SHA-256 manifest
+        shell: pwsh
+        run: |
+          $files = @(
+            "release-vectorforge/VectorForge-1.0.0-x64-setup.exe",
+            "release-vectorforge/VectorForge-1.0.0-x64-portable.exe",
+            "release-photoforge/PhotoForge-1.0.0-x64-setup.exe",
+            "release-photoforge/PhotoForge-1.0.0-x64-portable.exe",
+            "publisher-release/PublisherForge-1.0.0-x64-setup.exe",
+            "publisher-release/PublisherForge-1.0.0-x64-portable.exe"
+          )
+          $lines = foreach ($file in $files) {
+            if (-not (Test-Path $file)) { throw "Missing artifact: $file" }
+            $hash = (Get-FileHash -Algorithm SHA256 $file).Hash.ToLowerInvariant()
+            "$hash  $(Split-Path $file -Leaf)"
+          }
+          $lines | Set-Content signed-or-unsigned-SHA256SUMS.txt -Encoding utf8
+
+      - name: Upload Windows release bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: vectorforge-windows-${{ github.ref_name }}
+          if-no-files-found: error
+          retention-days: 30
+          path: |
+            release-vectorforge/*-setup.exe
+            release-vectorforge/*-portable.exe
+            release-photoforge/*-setup.exe
+            release-photoforge/*-portable.exe
+            publisher-release/*-setup.exe
+            publisher-release/*-portable.exe
+            signed-or-unsigned-SHA256SUMS.txt
