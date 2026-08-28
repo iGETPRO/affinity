@@ -1,0 +1,30 @@
+appId: com.vectorforge.publisherforge
+productName: PublisherForge
+icon: desktop/vectorforge-icon.svg
+artifactName: PublisherForge-${version}-${arch}.${ext}
+directories:
+  output: publisher-release
+files:
+  - desktop/**/*
+  - package.json
+  - '!node_modules/**/*'
+  - '!release/**/*'
+  - '!publisher-release/**/*'
+asar: true
+compression: store
+extraMetadata:
+  main: desktop/publisherforge-main.cjs
+win:
+  signAndEditExecutable: false
+  verifyUpdateCodeSignature: false
+  target:
+    - portable
+    - nsis
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+portable:
+  artifactName: PublisherForge-${version}-${arch}-portable.${ext}
