@@ -1,0 +1,46 @@
+{
+  "release": "VectorForge 1.0.0",
+  "recordedAtUtc": "",
+  "tester": "",
+  "organization": "",
+  "machines": [
+    {
+      "platform": "Windows 10 x64",
+      "edition": "",
+      "build": "",
+      "hardware": "",
+      "smartScreenObserved": "",
+      "results": []
+    },
+    {
+      "platform": "Windows 11 x64",
+      "edition": "",
+      "build": "",
+      "hardware": "",
+      "smartScreenObserved": "",
+      "results": []
+    }
+  ],
+  "artifacts": [
+    { "name": "VectorForge-1.0.0-x64-setup.exe", "sha256": "", "setupResult": "", "launchResult": "" },
+    { "name": "VectorForge-1.0.0-x64-portable.exe", "sha256": "", "setupResult": "not-applicable", "launchResult": "" },
+    { "name": "PhotoForge-1.0.0-x64-setup.exe", "sha256": "", "setupResult": "", "launchResult": "" },
+    { "name": "PhotoForge-1.0.0-x64-portable.exe", "sha256": "", "setupResult": "not-applicable", "launchResult": "" },
+    { "name": "PublisherForge-1.0.0-x64-setup.exe", "sha256": "", "setupResult": "", "launchResult": "" },
+    { "name": "PublisherForge-1.0.0-x64-portable.exe", "sha256": "", "setupResult": "not-applicable", "launchResult": "" }
+  ],
+  "personaChecks": {
+    "VectorForge": { "correctPersona": "", "nativeFilesOpenSave": "", "export": "", "externalLinks": "", "notes": "" },
+    "PhotoForge Studio": { "correctPersona": "", "nativeFilesOpenSave": "", "export": "", "externalLinks": "", "notes": "" },
+    "PublisherForge": { "correctPersona": "", "nativeFilesOpenSave": "", "export": "", "pdfxPreflight": "", "externalLinks": "", "notes": "" }
+  },
+  "overallStatus": "pending",
+  "blockingIssues": [],
+  "evidence": [],
+  "signing": {
+    "certificateSubject": "",
+    "certificateThumbprint": "",
+    "timestampServer": "",
+    "verificationResult": "pending"
+  }
+}

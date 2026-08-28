@@ -1,0 +1,13 @@
+{
+  "platforms": ["Windows 10 x64", "Windows 11 x64"],
+  "personas": ["VectorForge", "PhotoForge Studio", "PublisherForge"],
+  "checks": [
+    { "id": "launch", "label": "Portable executable launches without developer runtime", "status": "manual" },
+    { "id": "persona-isolation", "label": "Each desktop wrapper opens the correct persona", "status": "manual" },
+    { "id": "native-files", "label": "Native project files open and save after relaunch", "status": "manual" },
+    { "id": "print-preflight", "label": "PDF/X profile, ICC mode, bleed, crop marks, and slug checks are visible", "status": "automated" },
+    { "id": "external-links", "label": "External links open in the system browser", "status": "manual" },
+    { "id": "signing", "label": "Executable and installer are trusted by Windows SmartScreen", "status": "blocked-until-certificate" }
+  ],
+  "signing": { "certificateRequired": true, "credentialsStoredInRepository": false }
+}

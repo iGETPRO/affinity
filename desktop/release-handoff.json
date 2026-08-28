@@ -1,0 +1,28 @@
+{
+  "schema": "vectorforge-release-handoff",
+  "version": 1,
+  "pdfx": {
+    "reviewStatus": "pending-external-preflight",
+    "profiles": ["PDF/X-1a", "PDF/X-3", "PDF/X-4"],
+    "criteria": {
+      "iccOutputIntent": "required",
+      "minimumBleedMm": 3,
+      "cropMarksRequireSlug": true,
+      "pdfx1aColorMode": "CMYK",
+      "pdfx3RgbRequiresCalibratedProfile": true
+    },
+    "reviewer": "",
+    "tool": "",
+    "reviewedAt": "",
+    "notes": ""
+  },
+  "windowsSigning": {
+    "status": "certificate-required",
+    "portableArtifacts": ["VectorForge", "PhotoForge Studio", "PublisherForge"],
+    "installerTargets": ["NSIS", "portable"],
+    "certificateSubject": "",
+    "timestampAuthority": "",
+    "signedAt": "",
+    "notes": "Keep CSC_LINK and CSC_KEY_PASSWORD in the Windows CI secret store."
+  }
+}
